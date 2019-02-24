@@ -1,0 +1,32 @@
+image_paths:
+  TempDir: '/home/xddz/wharf_images/temp/'
+  DetectDir: '/home/xddz/wharf_images/detect/'
+  FailDir: '/home/xddz/wharf_images/failure/'
+  MissDetectDir: '/home/xddz/wharf_images/miss_detect/'
+
+model:
+#  checkpoint_path: '/home/username/workspace/models/maigao_2018_11_resnet/'
+#  check_num_model: '/home/usrname/workspace/models/check_model.h5'
+  checkpoint_path: '/home/xddz/PyCharmProjects/python36/MaGo-container_num_rec/checks/maigao_2018_11_resnet'
+  check_num_model: '/home/xddz/PyCharmProjects/python36/MaGo-container_num_rec/checks/check_model_2018_12_31.h5'
+  crnn_model: '/home/xddz/PyCharmProjects/python36/MaGo-container_num_rec/checks/mago_crnn_2019_1_25.pth'
+
+parameters:
+  filter_boxes:
+    bias: [5, 4]
+  get_patchs:
+    bias: [2, 3, 5, 3]
+    cross_threshold: 36
+  get_check_patch:
+    bias: 10
+    width_ratio: 1.25
+  locate_check_num:
+    bias: 1
+    bitwise_thresh: 110
+    min_size: 40
+  main_function:
+    patch_check_localization_ratio: 0.85
+
+socket:
+  ip: '127.0.0.1'
+  port: 8080
